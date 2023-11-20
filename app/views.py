@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, url_for
 from pymongo import MongoClient
 from requests import get
 from datetime import date
@@ -30,7 +30,7 @@ def index():
 
     # saving img to database 
         collection.insert_one(image_data)
-    return '<h1>index</h1>'
+    return render_template('index.html', image_url=image_data['url'])
 
 @app.route('/images_list')
 def all_images():
