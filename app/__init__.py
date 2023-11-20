@@ -8,4 +8,4 @@ from app import views
 from app import admin_views
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
