@@ -8,5 +8,5 @@ CORS(app)
 
 
 from app import apod_views
-from app import admin_views
+from app import neo_views
 

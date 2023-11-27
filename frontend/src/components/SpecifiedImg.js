@@ -13,7 +13,7 @@ export const SpecifiedImg = () => {
         axios.get(`http://127.0.0.1:5000/api/img_detail?date=${date}`)
             .then((response) => {
                 console.log(response.data);
-                setImg(response.data.url);
+                setImg(response.data);
             }) .catch((error) => {
                 console.error('error getting photo', error);
                 console.log(error)
@@ -22,7 +22,7 @@ export const SpecifiedImg = () => {
 
     return (
         <div>
-            <main className='main-container' style={{backgroundImage: `url(${img.url})`}}>
+            <main className='main-container' style={{backgroundImage: `url(${img?.url})`}}>
             </main>
         </div>
     );

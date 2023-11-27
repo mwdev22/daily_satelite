@@ -1,5 +1,5 @@
-from flask import Flask, render_template, jsonify, url_for
-from flask_restful import Resource, Api, reqparse
+from flask import Flask, jsonify, request
+from flask_restful import Resource, Api
 from pymongo import MongoClient
 from requests import get
 from datetime import date
@@ -37,12 +37,11 @@ class Index(Resource):
         image_data['_id'] = str(image_data['_id'])
         return jsonify(image_data)
 
-from flask import request
 
 class ImageDetail(Resource):
     def get(self):
         requested_date = request.args.get('date', None)
-
+        print(requested_date)
         if requested_date:
             result = collection.find_one({"date": requested_date})
 
@@ -52,7 +51,9 @@ class ImageDetail(Resource):
                 image_data['_id'] = str(image_data['_id'])
                 return jsonify(image_data)
             else:
-                params = {'api_key': API_KEY}
+                params = {'api_key': API_KEY,
+                          'date' : requested_date
+                          }
                 response = get(NASA_APOD_API, params=params)
                 rsp = response.json()
 

@@ -2,16 +2,11 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Navbar } from './Navbar';
 
 export const HomePage = () => {
 
     const [img,setImg] = useState({});
-    const [date,setDate] = useState('');
-
-    const handleDateInputChange = (e) => {
-      setDate(e.target.value);
-      console.log(date)
-    };
   
     
     useEffect(() => {
@@ -24,11 +19,7 @@ export const HomePage = () => {
   return (
     <div>
         <main className='main-container' style={{backgroundImage: `url(${img.url})`}}>    
-            <section>
-              <label for="date"></label>
-              <input type="date" name="date" id="" onChange={handleDateInputChange}/>
-              <Link to={`/specified_img/${date}`} >See a picture NASA chosen this day!</Link>
-            </section>
+            <Navbar />
         </main>
     </div>
   )
