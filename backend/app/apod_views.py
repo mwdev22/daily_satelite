@@ -1,10 +1,11 @@
 from flask import Flask, jsonify, request
-from flask_restful import Resource, Api
+from flask_restful import Resource, Api, reqparse
 from pymongo import MongoClient
 from requests import get
 from datetime import date
 from app import app
 from app import API_KEY
+
 
 # setting db table
 client = MongoClient('mongodb://localhost:27017/')
@@ -12,6 +13,8 @@ db = client['nasa_apod']
 collection = db['apod']
 
 api = Api(app)
+parser = reqparse.RequestParser()
+
 
 NASA_APOD_API = "https://api.nasa.gov/planetary/apod"
 
@@ -41,7 +44,8 @@ class Index(Resource):
 class ImageDetail(Resource):
     def get(self):
         requested_date = request.args.get('date', None)
-        print(requested_date)
+        # parser.add_argument('date', type=date, help='date of photo')
+
         if requested_date:
             result = collection.find_one({"date": requested_date})
 

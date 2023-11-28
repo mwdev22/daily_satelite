@@ -23,7 +23,7 @@ class NearestEarthObject(Resource):
 
         if obj:
             neo_data = obj
-            
+            neo_data['_id'] = str(neo_data['_id'])
         else:   
             params = {
                 'api_key': API_KEY,
