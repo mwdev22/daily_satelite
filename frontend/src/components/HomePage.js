@@ -20,6 +20,10 @@ export const HomePage = () => {
     <div>
         <main className='main-container' style={{backgroundImage: `url(${img.url})`}}>    
             <Navbar />
+
+            <section className='main-cont'>
+
+            </section>
         </main>
     </div>
   )

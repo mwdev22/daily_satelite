@@ -13,7 +13,7 @@ export const Navbar = () => {
   
 
   return (
-    <div>
+    <div >
         <nav>
             <ul>
               <li>

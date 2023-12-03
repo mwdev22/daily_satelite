@@ -24,6 +24,7 @@ class NearestEarthObject(Resource):
         if obj:
             neo_data = obj
             neo_data['_id'] = str(neo_data['_id'])
+            
         else:   
             params = {
                 'api_key': API_KEY,
@@ -38,16 +39,18 @@ class NearestEarthObject(Resource):
             neo = min(neo_resp['near_earth_objects'][str(today)], key=lambda x: x['close_approach_data'][0]['miss_distance']['kilometers'])
             
             neo_data = {
+                'name':neo['name'],
                 'miss_distance':neo['close_approach_data'][0]['miss_distance'],
                 'relative_velocity':neo['close_approach_data'][0]['relative_velocity'],
                 'orbiting_body':neo['close_approach_data'][0]['orbiting_body'],
-                'potentially_hazardous':neo['is_potentially_hazardous_asteroid']
+                'hazardous':neo['is_potentially_hazardous_asteroid'],
+                
             }
 
             collection.insert_one(neo_data)
             neo_data['_id'] = str(neo_data['_id'])
 
 
-        return jsonify(neo)
+        return jsonify(neo_data)
 
 api.add_resource(NearestEarthObject, '/api/neo')

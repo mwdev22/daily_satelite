@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { Navbar } from './Navbar'
 
 export const SpecifiedImg = () => {
     
@@ -22,7 +23,19 @@ export const SpecifiedImg = () => {
 
     return (
         <div>
-            <main className='main-container' style={{backgroundImage: `url(${img?.url})`}}>
+            <Navbar />
+            <main className='main-container'>
+
+            <section className='det-con'>
+                <div className='img-s'>
+                    <div className='image' style={{backgroundImage: `url(${img?.url})`}}>
+                    </div>
+                </div>
+                <aside className='p-info'>
+                        <h5>{img.title}</h5>
+                        <p>{img.explanation}</p>
+                    </aside>
+            </section>      
             </main>
         </div>
     );
