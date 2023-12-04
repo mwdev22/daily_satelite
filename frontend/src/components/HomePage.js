@@ -18,13 +18,20 @@ export const HomePage = () => {
     },[])
   return (
     <div>
-        <main className='main-container' style={{backgroundImage: `url(${img.url})`}}>    
-            <Navbar />
-
-            <section className='main-cont'>
-
-            </section>
-        </main>
+         <Navbar />
+         <main className='main-container'>
+        
+            <section className='det-con'>
+                <div className='img-s'>
+                    <div className='image' style={{backgroundImage: `url(${img?.url})`}}>
+                    </div>
+                </div>
+                <aside className='p-info'>
+                        <h5>{img.title}</h5>
+                        <p>{img.explanation}</p>
+                    </aside>
+            </section>      
+            </main>
     </div>
   )
 }

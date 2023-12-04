@@ -4,6 +4,7 @@ import './css/App.css';
 import { HomePage } from './components/HomePage';
 import { SpecifiedImg } from './components/SpecifiedImg';
 import { Navbar } from './components/Navbar';
+import { NearestObject } from './components/NearestObject'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/specified_img/:date" element={<SpecifiedImg />} />
+        <Route path="/neo" element={<NearestObject />} />
       </Routes>
     </Router>
   );

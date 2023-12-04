@@ -1,0 +1,22 @@
+.neo-section{
+    color: white;
+    backdrop-filter: blur(100px);
+    width: 80vw;
+    text-align: center;
+    margin-top: 20rem;
+    margin-bottom: 20rem;
+    padding: 3rem;
+}
+
+.cols{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 1.3rem;
+}
+
+.ast-info{
+    display: flex;
+    flex-direction: column;
+}

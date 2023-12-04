@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;700;900&display=swap');
 @import './nav.css';
+@import './neo.css';
 
 body{
   margin: 0;
