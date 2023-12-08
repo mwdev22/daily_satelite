@@ -26,7 +26,8 @@ body{
 }
 
 .det-con{
-  min-height: 70vh;
+  min-height: 100vh;
+  padding: 3rem;
   background-color: inherit;
   width: 90vw;
   display: flex;
@@ -52,13 +53,14 @@ body{
 
 .image{
   width: 90%;
-  height: 90%;
+  height: 70vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .p-info{
+  margin-top: 2.9rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,7 +72,8 @@ body{
   font-weight: 800;
 }
 .p-info p{
-  margin: 3rem;
+  margin-bottom: 3rem;
+  font-size: 1.4rem;
 }
 
 @media all and (max-width:900px) {

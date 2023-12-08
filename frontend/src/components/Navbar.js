@@ -13,15 +13,13 @@ export const Navbar = () => {
 
     const openMenu = () => {
       document.getElementById('resp-menu').style.display = 'flex';
-      document.getElementById('burger').style.display = 'none';
-      document.getElementById('closeX').style.display = 'block';
-      
+      document.getElementById('burger').style.color = 'transparent'
     };
   
     const closeMenu = () => {
       document.getElementById('resp-menu').style.display = 'none';
-      document.getElementById('closeX').style.display = 'none';
-      document.getElementById('burger').style.display = 'flex'
+      document.getElementById('burger').style.color = 'white'
+      
     };
   
 
@@ -41,6 +39,9 @@ export const Navbar = () => {
               </li>
             </ul>
             <ul className='resp-menu' id='resp-menu'>
+            <a href="#" id="closeX" onClick={closeMenu}>
+            &times;
+            </a>
             <li>
                 <Link to={'/'}>Todays photo</Link>
               </li>
@@ -52,9 +53,7 @@ export const Navbar = () => {
               <Link to={`/neo`} >Nearest Earth Object</Link>
               </li>
             </ul>
-            <a href="#" id="closeX" onClick={closeMenu}>
-            &times;
-            </a>
+          
             <span id="burger" onClick={openMenu}>
               &#9776;
             </span>

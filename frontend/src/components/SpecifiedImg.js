@@ -32,7 +32,7 @@ export const SpecifiedImg = () => {
                     </div>
                 </div>
                 <aside className='p-info'>
-                        <h5>{img.title}</h5>
+                        <h5 >{img.title}</h5>
                         <p>{img.explanation}</p>
                     </aside>
             </section>      
